@@ -1,0 +1,14 @@
+{
+  "name": "pyWebview_test",
+  "version": "0.0.0",
+  "server_dir_path":"../srver_py",
+  "server_main":"",
+  "scripts": {
+    "test": "conda activate test_all & python test/pc_main.py",
+    "dev": "conda activate test_all & python src/pc_main.py",
+    "build": "conda activate test_all & pyinstaller --distpath=dist --workpath=build  pc_main.spec",
+    "build_base": "conda activate test_all & pyinstaller --contents-directory . --icon=source/img/ion/favicon.ico --distpath=dist --workpath=build --add-data=source;source -D  src/pc_main.py",
+    "update_install_lib": "conda activate test_all &  pipreqs --use-local --encoding=utf8 --force . & pip install -r requirements.txt",
+    "update_all_lib": "conda activate test_all & pip freeze > requirements.txt"
+  }
+}
